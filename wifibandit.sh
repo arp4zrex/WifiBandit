@@ -2,7 +2,7 @@
 
 # Script: wifibandit.sh
 # Description: This script automates pentesting attacks on WiFi networks.
-# Author: arp4zrex
+# Author: arp4zrex https://github.com/arp4zrex
 
 
 endColour="\033[0m\e[0m"
