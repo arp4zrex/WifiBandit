@@ -32,11 +32,5 @@ El ataque PKMID es un ataque sin cliente que aprovecha una vulnerabilidad en el 
 En este ataque, se capturan los hashes PMKID necesarios para realizar un ataque de fuerza bruta contra la contraseña de la red. Este ataque puede realizarse sin necesidad de clientes asociados a la red, lo que lo hace especialmente sigiloso.
 Este ataque aprovecha una vulnerabilidad en el protocolo de autenticación de las redes WiFi WPA/WPA2.
 El script utiliza la herramienta hcxdumptool para capturar el PMKID, que es un hash derivado de la contraseña de la red y la dirección MAC del punto de acceso.
-Una vez capturado el PMKID, se puede intentar descifrar la contraseña utilizando herramientas como hashcat junto con un diccionario de contraseñas
+Una vez capturado el PMKID, se puede intentar descifrar la contraseña utilizando herramientas como hashcat junto con un diccionario de contraseñas.
 
-
-
-Requerimientos
-Aircrack-ng
-Macchanger
-Hostapd
