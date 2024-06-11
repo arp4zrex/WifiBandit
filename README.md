@@ -1,36 +1,40 @@
-# WifiBandit
-WiFiBandit es un script diseñado para realizar pruebas de penetración en redes WiFi con el objetivo de evaluar su seguridad y detectar posibles vulnerabilidades. El script proporciona una interfaz interactiva para configurar la tarjeta de red, seleccionar el modo de ataque y realizar los ataques correspondientes.
 
-# Uso
-Clona este repositorio en tu máquina local:
+# WifiBandit
+
+WiFiBandit is a script designed for penetration testing on WiFi networks to assess their security and detect potential vulnerabilities. The script provides an interactive interface for configuring the network card, selecting the attack mode, and executing the corresponding attacks.
+
+# Usage
+
+Clone this repository to your local machine:
 git clone https://github.com/arp4zrex/WifiBandit.git
 cd wifibandit
 chmod +x wifibandit.sh
 ./wifibandit.sh
 
-# Requisitos
-aircrack-ng: Utilidad para auditoría de seguridad inalámbrica.
-macchanger: Herramienta para cambiar la dirección MAC de una interfaz de red.
-hostapd: Software de punto de acceso Wi-Fi.
-iwconfig: Utilidad para configurar parámetros de una interfaz de red inalámbrica.
-tcpdump: Herramienta de captura y análisis de paquetes de red.
-xterm: Emulador de terminal para mostrar ventanas de terminal.
-hashcat: Herramienta de recuperación de contraseñas.
-hcxdumptool: Herramienta para capturar PMKID de redes Wi-Fi.
+# Requirements
 
-# Tipos de Ataques
+aircrack-ng: Utility for wireless security auditing.
+macchanger: Tool for changing the MAC address of a network interface.
+hostapd: Software for creating a Wi-Fi access point.
+iwconfig: Utility for configuring parameters of a wireless network interface.
+tcpdump: Network packet capture and analysis tool.
+xterm: Terminal emulator to display terminal windows.
+hashcat: Password recovery tool.
+hcxdumptool: Tool for capturing PMKID from Wi-Fi networks.
+rockyou.txt: is a widely-used password dictionary containing millions of common passwords for brute force attacks
+
+# Types of Attacks
 
 # Handshake
-Este modo de ataque se utiliza para capturar el handshake de autenticación entre un dispositivo cliente y un punto de acceso Wi-Fi. Una vez capturado el handshake, se pueden realizar ataques de fuerza bruta para descifrar la contraseña de la red.
-Este ataque implica la captura de paquetes de autenticación entre un dispositivo cliente y un punto de acceso. Una vez capturado el handshake, se puede utilizar un diccionario de contraseñas para intentar descifrar la contraseña de la red.
-El script utiliza herramientas como airodump-ng para escanear las redes WiFi disponibles y capturar el handshake de autenticación.
-Una vez capturado el handshake, se puede utilizar la herramienta aircrack-ng junto con un diccionario de contraseñas para intentar descifrar la contraseña de la red.
-El tiempo necesario para capturar un handshake puede variar según la actividad de la red y el número de dispositivos conectados.
+This attack mode is used to capture the authentication handshake between a client device and a Wi-Fi access point. Once the handshake is captured, brute force attacks can be performed to decrypt the network password.
+This attack involves capturing authentication packets between a client device and an access point. Once the handshake is captured, a password dictionary can be used to try to decrypt the network password.
+The script uses tools like airodump-ng to scan available WiFi networks and capture the authentication handshake.
+Once the handshake is captured, the aircrack-ng tool can be used along with a password dictionary to attempt to decrypt the network password.
+The time required to capture a handshake can vary depending on network activity and the number of connected devices.
 
 # PKMID
-El ataque PKMID es un ataque sin cliente que aprovecha una vulnerabilidad en el estándar de autenticación WPA/WPA2 para capturar hashes PMKID. Estos hashes pueden ser posteriormente utilizados en un ataque de fuerza bruta para obtener la contraseña de la red.
-En este ataque, se capturan los hashes PMKID necesarios para realizar un ataque de fuerza bruta contra la contraseña de la red. Este ataque puede realizarse sin necesidad de clientes asociados a la red, lo que lo hace especialmente sigiloso.
-Este ataque aprovecha una vulnerabilidad en el protocolo de autenticación de las redes WiFi WPA/WPA2.
-El script utiliza la herramienta hcxdumptool para capturar el PMKID, que es un hash derivado de la contraseña de la red y la dirección MAC del punto de acceso.
-Una vez capturado el PMKID, se puede intentar descifrar la contraseña utilizando herramientas como hashcat junto con un diccionario de contraseñas.
-
+The PKMID attack is a clientless attack that exploits a vulnerability in the WPA/WPA2 authentication standard to capture PMKID hashes. These hashes can then be used in a brute force attack to obtain the network password.
+In this attack, the necessary PMKID hashes are captured to perform a brute force attack against the network password. This attack can be carried out without any clients associated with the network, making it especially stealthy.
+This attack exploits a vulnerability in the authentication protocol of WPA/WPA2 WiFi networks.
+The script uses the hcxdumptool to capture the PMKID, which is a hash derived from the network password and the MAC address of the access point.
+Once the PMKID is captured, tools like hashcat can be used along with a password dictionary to attempt to decrypt the password.
