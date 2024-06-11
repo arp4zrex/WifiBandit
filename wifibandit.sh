@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Script: wifibandit.sh
+# Description: This script automates pentesting attacks on WiFi networks.
+# Author: arp4zrex
+
+
 endColour="\033[0m\e[0m"
 redColour="\e[0;31m\033[1m"
 blueColour="\e[0;34m\033[1m"
