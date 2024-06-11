@@ -3,7 +3,7 @@ WiFiBandit es un script diseñado para realizar pruebas de penetración en redes
 
 # Uso
 Clona este repositorio en tu máquina local:
-git clone https://github.com/tu_usuario/wifibandit.git
+git clone https://github.com/arp4zrex/WifiBandit.git
 cd wifibandit
 chmod +x wifibandit.sh
 ./wifibandit.sh
